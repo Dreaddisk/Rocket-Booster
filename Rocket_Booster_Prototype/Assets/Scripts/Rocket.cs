@@ -5,6 +5,9 @@ using UnityEngine;
 public class Rocket : MonoBehaviour
 {
     #region Variables
+
+    [SerializeField] float rcsThrust = 10f;
+    [SerializeField] float mainThrust = 10f;
     private Rigidbody rigidBody;
     AudioSource audioSource;
 
@@ -17,32 +20,35 @@ public class Rocket : MonoBehaviour
     }
     private void Update()
     {
-        ProcessInput();
-
+        Rotate();
+        Thrust();
 
     }
 
-    private void ProcessInput()
+    private void Rotate()
     {
-        if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            //            rigidBody.AddRelativeForce(Vector3.left);
-            //           rigidBody.AddRelativeTorque(Vector3.up);
-            transform.Rotate(Vector3.forward);
+            float rotationLeft = rcsThrust * Time.deltaTime;
+            transform.Rotate(Vector3.forward * rotationLeft);
             Debug.Log("Going to the left");
         }
 
-        if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            //            rigidBody.AddRelativeForce(Vector3.right);
-            //            rigidBody.AddRelativeTorque(Vector3.down);
-            transform.Rotate(Vector3.back);
+            float rotationRight = rcsThrust * Time.deltaTime;
+            transform.Rotate(Vector3.back * rotationRight);
             Debug.Log("Going to the right");
         }
+    }
 
+    private void Thrust()
+    {
         if (Input.GetKey(KeyCode.Space))
         {
-            rigidBody.AddRelativeForce(Vector3.up);
+            float thrustPower = mainThrust * Time.deltaTime;
+            rigidBody.AddRelativeForce(Vector3.up * thrustPower);
             if (!audioSource.isPlaying)
             {
                 audioSource.Play();
@@ -53,5 +59,6 @@ public class Rocket : MonoBehaviour
             audioSource.Stop();
         }
     }
+
 
 } // main class
