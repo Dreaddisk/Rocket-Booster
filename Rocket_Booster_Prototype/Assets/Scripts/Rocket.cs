@@ -32,14 +32,14 @@ public class Rocket : MonoBehaviour
         {
             float rotationLeft = rcsThrust * Time.deltaTime;
             transform.Rotate(Vector3.forward * rotationLeft);
-            Debug.Log("Going to the left");
+ //           Debug.Log("Going to the left");
         }
 
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             float rotationRight = rcsThrust * Time.deltaTime;
             transform.Rotate(Vector3.back * rotationRight);
-            Debug.Log("Going to the right");
+ //           Debug.Log("Going to the right");
         }
     }
 
@@ -57,6 +57,23 @@ public class Rocket : MonoBehaviour
         else if (Input.GetKeyUp(KeyCode.Space))
         {
             audioSource.Stop();
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        switch(collision.gameObject.tag)
+        {
+            case "Friendly":
+                Debug.Log("You are in a freindly position");
+                break;
+
+            case "Deadly":
+                Debug.Log("You are in the DANGER ZONE");
+                break;
+            default:
+                Debug.Log("You are not standing in any platform");
+                break;
         }
     }
 
