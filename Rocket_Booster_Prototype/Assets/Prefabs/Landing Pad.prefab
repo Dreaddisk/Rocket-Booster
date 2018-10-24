@@ -22,10 +22,11 @@ GameObject:
   - component: {fileID: 33872263457831832}
   - component: {fileID: 23074386489119958}
   - component: {fileID: 65276939325617558}
+  - component: {fileID: 114116111851470480}
   m_Layer: 0
   m_Name: Landing Pad
   m_TagString: Firendly
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -36,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1452915163840652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -41.71, y: 0.38, z: 0}
-  m_LocalScale: {x: 3, y: 0.5, z: 3}
+  m_LocalPosition: {x: 56.5, y: 15.42, z: 0}
+  m_LocalScale: {x: 13, y: 0.5, z: 13}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -96,3 +97,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114116111851470480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1452915163840652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc483fc3c4d6e0a46aa4646882bd7b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rocketHolder: {fileID: 1162618379990440, guid: 7732fb09793411248a09fac50f5f286e,
+    type: 2}
