@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class Rocket : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+
     }
     private void Update()
     {
@@ -69,9 +71,16 @@ public class Rocket : MonoBehaviour
                 break;
 
             case "Deadly":
+                SceneManager.LoadScene("Scene_Game_1");
                 Debug.Log("You are in the DANGER ZONE");
                 break;
+
+            case "Finish":
+                SceneManager.LoadScene("Scene_Game_2");
+                Debug.Log("You win this level.");
+                break;
             default:
+
                 Debug.Log("You are not standing in any platform");
                 break;
         }

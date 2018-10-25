@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114116111851470480}
   m_Layer: 0
   m_Name: Landing Pad
-  m_TagString: Firendly
+  m_TagString: Finish
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,7 +58,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: f2faf7b08db818940b1a86852bb0a033, type: 2}
+  - {fileID: 2100000, guid: abd76db59d44daa4d9e6ee890f67e1a3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -108,5 +108,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc483fc3c4d6e0a46aa4646882bd7b26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rocketHolder: {fileID: 1162618379990440, guid: 7732fb09793411248a09fac50f5f286e,
-    type: 2}
+  rocketHolder: {fileID: 0}
