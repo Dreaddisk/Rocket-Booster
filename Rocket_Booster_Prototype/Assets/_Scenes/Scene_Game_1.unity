@@ -346,6 +346,26 @@ Prefab:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 82947533049742314, guid: bd2ab3fc4a5be464c97df1fe2e8806e9,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 796a59972205eec48beb6667c9c88538, type: 3}
+    - target: {fileID: 114189905861100500, guid: bd2ab3fc4a5be464c97df1fe2e8806e9,
+        type: 2}
+      propertyPath: mainEngine
+      value: 
+      objectReference: {fileID: 8300000, guid: 796a59972205eec48beb6667c9c88538, type: 3}
+    - target: {fileID: 114189905861100500, guid: bd2ab3fc4a5be464c97df1fe2e8806e9,
+        type: 2}
+      propertyPath: levelLoad
+      value: 
+      objectReference: {fileID: 8300000, guid: ea5ad889fc69d1d47881022781483dba, type: 3}
+    - target: {fileID: 114189905861100500, guid: bd2ab3fc4a5be464c97df1fe2e8806e9,
+        type: 2}
+      propertyPath: rocketeath
+      value: 
+      objectReference: {fileID: 8300000, guid: 1d25c796a18c10e439f1cce7b8410761, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2ab3fc4a5be464c97df1fe2e8806e9, type: 2}
   m_IsPrefabAsset: 0
