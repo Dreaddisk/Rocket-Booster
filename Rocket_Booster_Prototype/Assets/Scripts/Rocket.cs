@@ -7,11 +7,20 @@ public class Rocket : MonoBehaviour
 {
     #region Variables
 
+    [Header("Rocket Stats")]
     [SerializeField] float rcsThrust = 10f;
     [SerializeField] float mainThrust = 10f;
+
+    [Header("SoundClips")]
     [SerializeField] AudioClip mainEngine;
     [SerializeField] AudioClip rocketeath;
     [SerializeField] AudioClip levelLoad;
+
+    [Header("FVX")]
+    [SerializeField] ParticleSystem mainEngineParticles;
+    [SerializeField] ParticleSystem successParticles;
+    [SerializeField] ParticleSystem deathParticles;
+
     private Rigidbody rigidBody;
     AudioSource audioSource;
 
@@ -72,6 +81,7 @@ public class Rocket : MonoBehaviour
         else if (Input.GetKeyUp(KeyCode.Space))
         {
             audioSource.Stop();
+            mainEngineParticles.Stop();
         }
     }
 
@@ -79,10 +89,13 @@ public class Rocket : MonoBehaviour
     {
         float thrustPower = mainThrust * Time.deltaTime;
         rigidBody.AddRelativeForce(Vector3.up * thrustPower);
+
         if (!audioSource.isPlaying)
         {
             audioSource.PlayOneShot(mainEngine);
         }
+
+        mainEngineParticles.Play();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -98,10 +111,12 @@ public class Rocket : MonoBehaviour
 
             case "Deadly":
                 StartDeathSequence();
+                deathParticles.Play();
                 break;
 
             case "Finish":
                 StartSuccessSequence();
+
                 break;
             default:
                 Debug.Log("You are not standing in any platform");
@@ -113,6 +128,7 @@ public class Rocket : MonoBehaviour
     {
         audioSource.PlayOneShot(levelLoad);
         state = State.TRANSCENDING;
+        successParticles.Play();
         Invoke("LoadNextScene", 1f);
     }
 
@@ -120,6 +136,7 @@ public class Rocket : MonoBehaviour
     {
         audioSource.PlayOneShot(rocketeath);
         state = State.DYING;
+        deathParticles.Play();
         Invoke("LoadFirstLevel", 2f);
     }
 
