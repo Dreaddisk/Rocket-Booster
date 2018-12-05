@@ -24,8 +24,8 @@ GameObject:
   - component: {fileID: 65276939325617558}
   - component: {fileID: 114116111851470480}
   m_Layer: 0
-  m_Name: Landing Pad
-  m_TagString: Finish
+  m_Name: Landing Pad 2
+  m_TagString: Finish2
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,4 +108,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc483fc3c4d6e0a46aa4646882bd7b26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rocketHolder: {fileID: 0}
+  rocketHolder: {fileID: 1162618379990440, guid: 7732fb09793411248a09fac50f5f286e,
+    type: 2}

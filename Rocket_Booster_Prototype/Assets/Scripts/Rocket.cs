@@ -115,10 +115,14 @@ public class Rocket : MonoBehaviour
                 deathParticles.Play();
                 break;
 
-            case "Finish":
+            case "Finish1":
                 StartSuccessSequence();
-
                 break;
+
+            case "Finish2":
+                StartSuccessSequence2();
+                break;
+
             default:
                 Debug.Log("You are not standing in any platform");
                 break;
@@ -130,7 +134,15 @@ public class Rocket : MonoBehaviour
         audioSource.PlayOneShot(levelLoad);
         state = State.TRANSCENDING;
         successParticles.Play();
-        Invoke("LoadNextScene", levelLoadDelay);
+        Invoke("LoadSecondScene", levelLoadDelay);
+    }
+
+    private void StartSuccessSequence2()
+    {
+        audioSource.PlayOneShot(levelLoad);
+        state = State.TRANSCENDING;
+        successParticles.Play();
+        Invoke("LoadThirdLevel", levelLoadDelay);
     }
 
     private void StartDeathSequence()
@@ -141,7 +153,7 @@ public class Rocket : MonoBehaviour
         Invoke("LoadFirstLevel", levelLoadDelay);
     }
 
-    void LoadNextScene()
+    void LoadSecondScene()
     {
         SceneManager.LoadScene("Scene_Game_2"); // todo allow for more scenes
     }
@@ -149,5 +161,10 @@ public class Rocket : MonoBehaviour
     void LoadFirstLevel()
     {
         SceneManager.LoadScene("Scene_Game_1");
+    }
+
+    void LoadThirdLevel()
+    {
+        SceneManager.LoadScene("Scene_Game_3");
     }
 } // main class
